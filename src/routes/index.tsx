@@ -1,23 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
+import App from "@/todo-app/App.jsx";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "My To-Do Manager — Student Dashboard" },
+      {
+        name: "description",
+        content: "Add tasks, mark them done and track your progress with My To-Do Manager.",
+      },
+      { property: "og:title", content: "My To-Do Manager — Student Dashboard" },
+      {
+        property: "og:description",
+        content: "Add tasks, mark them done and track your progress with My To-Do Manager.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: App,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
