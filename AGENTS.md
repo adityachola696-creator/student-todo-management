@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- The To-Do app lives in `src/todo-app/` as plain `.jsx` components with one CSS file each in `src/todo-app/styles/`, imported via `src/styles.css`; keep it beginner-readable because it is a student practical project.
+- Pure task logic (validation, stats, filters, localStorage) stays in `src/todo-app/todoUtils.js` so it is unit-tested in `src/test/todo-utils.test.ts`.
