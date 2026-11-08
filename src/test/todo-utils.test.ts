@@ -21,7 +21,7 @@ describe("todo rules", () => {
 
   it("filters tasks by status", () => {
     expect(filterTasks(tasks, "all")).toHaveLength(3);
-    expect(filterTasks(tasks, "pending").map((t) => t.id)).toEqual(["2", "3"]);
-    expect(filterTasks(tasks, "completed").map((t) => t.id)).toEqual(["1"]);
+    expect(filterTasks(tasks, "pending").map((t: { id: string }) => t.id)).toEqual(["2", "3"]);
+    expect(filterTasks(tasks, "completed").map((t: { id: string }) => t.id)).toEqual(["1"]);
   });
 });
