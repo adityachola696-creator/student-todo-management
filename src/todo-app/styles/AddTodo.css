@@ -1,0 +1,64 @@
+/* Add task form */
+
+.add-todo {
+  padding: 1.25rem 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.add-todo h2 {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--foreground);
+}
+
+.add-todo-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.add-todo-input {
+  flex: 1;
+  padding: 0.7rem 0.95rem;
+  border: 1.5px solid var(--input);
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--background);
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.add-todo-input:focus {
+  border-color: var(--primary);
+  background: var(--card);
+}
+
+.add-todo-input.has-error {
+  border-color: var(--destructive);
+}
+
+.add-todo-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 1.4rem;
+  margin-top: 0.5rem;
+}
+
+.char-count {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 520px) {
+  .add-todo-form {
+    flex-direction: column;
+  }
+}
